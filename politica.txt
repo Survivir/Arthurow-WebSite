@@ -1,0 +1,32 @@
+# Política de Privacidade
+
+## 1. Informações que Coletamos
+Ao utilizar nosso site, podemos coletar certas informações pessoais para fins de autenticação e personalização do serviço. As informações coletadas incluem, mas não se limitam a:
+- Nome completo
+- Endereço de e-mail
+
+Esses dados são fornecidos durante o processo de login e armazenados localmente no navegador do usuário para facilitar o acesso contínuo ao site.
+
+## 2. Uso das Informações
+As informações coletadas são utilizadas para:
+- Autenticar o usuário e fornecer acesso ao site.
+- Personalizar a experiência do usuário no site.
+- Melhorar a segurança e prevenir acessos não autorizados.
+
+## 3. Compartilhamento de Dados
+Não compartilhamos suas informações pessoais com terceiros, exceto conforme exigido por lei ou para proteger nossos direitos legais.
+
+## 4. Armazenamento dos Dados
+As informações de login do usuário são armazenadas localmente no dispositivo do usuário (via `localStorage`) para melhorar a experiência de navegação. Isso inclui o token de autenticação e dados como nome e e-mail. Não armazenamos essas informações em servidores de terceiros.
+
+## 5. Segurança
+Nos comprometemos a proteger suas informações pessoais. No entanto, nenhuma transmissão de dados pela Internet é completamente segura. Embora nos esforcemos para proteger seus dados, não podemos garantir a segurança absoluta das informações transmitidas por meio do nosso site.
+
+## 6. Cookies
+Utilizamos cookies para facilitar o processo de login e melhorar a experiência do usuário. Esses cookies armazenam temporariamente dados de autenticação para garantir que você não precise se autenticar toda vez que acessar o site.
+
+## 7. Direitos do Usuário
+Você tem o direito de acessar, corrigir ou excluir suas informações pessoais armazenadas em nosso sistema, diretamente pelo navegador.
+
+## 8. Alterações na Política de Privacidade
+Reservamo-nos o direito de alterar esta Política de Privacidade a qualquer momento. Quaisquer alterações serão publicadas nesta página, e recomendamos que você revise esta política periodicamente.

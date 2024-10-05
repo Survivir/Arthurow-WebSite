@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site</title>
+    <link rel="stylesheet" href="site.css">
+</head>
+<body>
+
+    <div id="backgroundContainer">
+        <video autoplay muted loop>
+            <source src="videos/terraria ocean.mp4" type="video/mp4">
+            Seu navegador não suporta vídeos HTML5.
+        </video>
+    </div>
+
+    <div class="header">
+        <h1>Arthurow</h1>
+    </div>
+
+    <div class="social-icons">
+        <a href="https://www.youtube.com/@ArthurowXd" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/youtube-play.png" alt="YouTube">
+        </a>
+        <a href="https://www.tiktok.com/@arthurowxd" target="_blank">
+            <img src="https://img.icons8.com/color/48/000000/tiktok.png" alt="TikTok">
+        </a>
+    </div>
+
+    <div class="container">
+        <h1>Bem-vindo ao Site!</h1>
+        <p>Você está logado com sucesso.</p>
+    </div>
+
+    <button id="accountBtn">
+        <img src="https://img.icons8.com/material-rounded/24/000000/user.png" alt="Conta">
+    </button>
+
+    <div class="account-info" id="accountInfo">
+        <h2 id="userName"></h2>
+        <p id="userEmail"></p>
+        <p id="userRank">Ranque: Membro</p>
+        <p>Créditos: <span id="userPoints">0</span> Ap</p>
+        <button class="logout-btn" id="logoutBtn">Sair</button>
+    </div>
+
+    <script type="module" src="site.js"></script>
+</body>
+</html>
