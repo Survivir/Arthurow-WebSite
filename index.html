@@ -5,43 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionando...</title>
     <meta http-equiv="refresh" content="5; URL='login.html'" />
-    <link rel="stylesheet" href="style.css"> <!-- Link para o CSS externo -->
+    <link rel="stylesheet" href="site.css">
     <style>
+        @font-face {
+            font-family: 'Terraria';
+            src: url('font/Terraria.ttf') format('truetype'); /* Ajuste o caminho conforme necessário */
+        }
+
         body {
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
-            background-color: #f5f5f5;
-            font-family: 'Arial', sans-serif;
-            animation: fadeIn 1s ease-in;
+            background-color: #282c34;
+            color: #61dafb;
+            font-family: 'Terraria', sans-serif;
+            position: relative;
+            overflow: hidden;
         }
 
-        h1 {
-            font-size: 2.5rem;
-            color: #333;
+        .message {
             text-align: center;
-            margin-bottom: 20px;
-        }
-
-        p {
-            font-size: 1.2rem;
-            color: #666;
-            text-align: center;
-        }
-
-        a {
-            text-decoration: none;
-            color: #fff;
-            background-color: #007bff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-
-        a:hover {
-            background-color: #0056b3;
+            font-size: 2rem;
+            animation: fadeIn 2s;
         }
 
         @keyframes fadeIn {
@@ -52,12 +39,68 @@
                 opacity: 1;
             }
         }
+
+        .shape {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.7;
+            animation: move 4s infinite alternate;
+        }
+
+        @keyframes move {
+            0% {
+                transform: translate(0, 0);
+            }
+            50% {
+                transform: translate(100px, -100px);
+            }
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        /* Cores e tamanhos diferentes para as formas */
+        .circle1 {
+            width: 100px;
+            height: 100px;
+            background-color: rgba(255, 0, 0, 0.5);
+            top: 10%;
+            left: 10%;
+        }
+
+        .circle2 {
+            width: 150px;
+            height: 150px;
+            background-color: rgba(0, 255, 0, 0.5);
+            top: 20%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+
+        .circle3 {
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 0, 255, 0.5);
+            bottom: 15%;
+            left: 20%;
+            animation-delay: 2s;
+        }
+
+        .circle4 {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(255, 255, 0, 0.5);
+            bottom: 10%;
+            right: 20%;
+            animation-delay: 3s;
+        }
     </style>
 </head>
 <body>
-    <div>
-        <h1>Redirecionando...</h1>
-        <p>Se você não for redirecionado automaticamente, <a href="login.html">clique aqui</a>.</p>
-    </div>
+    <div class="message">Redirecionando para o Login...</div>
+    <div class="shape circle1"></div>
+    <div class="shape circle2"></div>
+    <div class="shape circle3"></div>
+    <div class="shape circle4"></div>
 </body>
 </html>
