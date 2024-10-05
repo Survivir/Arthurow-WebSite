@@ -4,33 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Redirecionando...</title>
-    <meta http-equiv="refresh" content="5; URL='login.html'" />
-    <link rel="stylesheet" href="site.css">
+    <link rel="preload" href="font/ANDYB.TTF" as="font" type="font/ttf" crossorigin="anonymous">
     <style>
-        @font-face {
-            font-family: 'Terraria';
-            src: url('font/Terraria.ttf') format('truetype'); /* Ajuste o caminho conforme necessário */
-        }
+        @import url('font/ANDYB.TTF');
 
         body {
+            margin: 0;
+            padding: 0;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            margin: 0;
             background-color: #282c34;
-            color: #61dafb;
-            font-family: 'Terraria', sans-serif;
-            position: relative;
+            font-family: 'ANDYB', sans-serif; /* Usando a fonte do Terraria */
+            color: #ffffff;
             overflow: hidden;
         }
 
-        .message {
+        .container {
             text-align: center;
-            font-size: 2rem;
-            animation: fadeIn 2s;
         }
 
+        h1 {
+            font-size: 3rem;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .shapes {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            height: 200px;
+        }
+
+        .shape {
+            margin: 0 20px;
+            animation: moveUp 2s infinite alternate;
+        }
+
+        .circle {
+            width: 80px;
+            height: 80px;
+            background-color: #61dafb;
+            border-radius: 50%;
+            animation-delay: 0s;
+        }
+
+        .square {
+            width: 80px;
+            height: 80px;
+            background-color: #ff61b9;
+            animation-delay: 0.2s;
+        }
+
+        .triangle {
+            width: 0;
+            height: 0;
+            border-left: 40px solid transparent;
+            border-right: 40px solid transparent;
+            border-bottom: 80px solid #4caf50;
+            animation-delay: 0.4s;
+        }
+
+        /* Animações */
         @keyframes fadeIn {
             from {
                 opacity: 0;
@@ -40,67 +77,29 @@
             }
         }
 
-        .shape {
-            position: absolute;
-            border-radius: 50%;
-            opacity: 0.7;
-            animation: move 4s infinite alternate;
-        }
-
-        @keyframes move {
-            0% {
-                transform: translate(0, 0);
+        @keyframes moveUp {
+            from {
+                transform: translateY(0);
             }
-            50% {
-                transform: translate(100px, -100px);
+            to {
+                transform: translateY(-20px);
             }
-            100% {
-                transform: translate(0, 0);
-            }
-        }
-
-        /* Cores e tamanhos diferentes para as formas */
-        .circle1 {
-            width: 100px;
-            height: 100px;
-            background-color: rgba(255, 0, 0, 0.5);
-            top: 10%;
-            left: 10%;
-        }
-
-        .circle2 {
-            width: 150px;
-            height: 150px;
-            background-color: rgba(0, 255, 0, 0.5);
-            top: 20%;
-            right: 15%;
-            animation-delay: 1s;
-        }
-
-        .circle3 {
-            width: 200px;
-            height: 200px;
-            background-color: rgba(0, 0, 255, 0.5);
-            bottom: 15%;
-            left: 20%;
-            animation-delay: 2s;
-        }
-
-        .circle4 {
-            width: 50px;
-            height: 50px;
-            background-color: rgba(255, 255, 0, 0.5);
-            bottom: 10%;
-            right: 20%;
-            animation-delay: 3s;
         }
     </style>
+    <script>
+        setTimeout(() => {
+            window.location.href = "site.html"; // Redireciona após 5 segundos
+        }, 5000);
+    </script>
 </head>
 <body>
-    <div class="message">Redirecionando para o Login...</div>
-    <div class="shape circle1"></div>
-    <div class="shape circle2"></div>
-    <div class="shape circle3"></div>
-    <div class="shape circle4"></div>
+    <div class="container">
+        <h1>Redirecionando...</h1>
+        <div class="shapes">
+            <div class="shape circle"></div>
+            <div class="shape square"></div>
+            <div class="shape triangle"></div>
+        </div>
+    </div>
 </body>
 </html>
