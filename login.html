@@ -226,12 +226,12 @@
         // Adiciona eventos de clique aos links e botões de fechar
         document.getElementById("termsLink").onclick = function() {
             openModal("termsModal");
-            loadTextFile("termos.txt", "termsContent"); // Carrega o arquivo termos.txt
+            loadTextFile("textos/termos.txt", "termsContent"); // Carrega o arquivo termos.txt
         };
 
         document.getElementById("privacyLink").onclick = function() {
             openModal("privacyModal");
-            loadTextFile("politica.txt", "privacyContent"); // Carrega o arquivo politica.txt
+            loadTextFile("textos/politica.txt", "privacyContent"); // Carrega o arquivo politica.txt
         };
 
         document.getElementById("closeTerms").onclick = function() {
