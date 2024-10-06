@@ -13,20 +13,32 @@
 
             google.accounts.id.initialize({
                 client_id: "502968796301-8lpgvrqb1a609an5qavbtr0oe10d54f5.apps.googleusercontent.com",
-                callback: handleCredentialResponse // Mantenha a função de callback
+                callback: handleCredentialResponse
             });
         };
 
         // Callback para manipular a resposta de credencial
-        window.handleCredentialResponse = function(response) {
-            const id_token = response.credential; // Obtém o token ID
+        window.handleCredentialResponse = async function(response) {
+            const id_token = response.credential;
 
-            // Simulação do armazenamento local
-            localStorage.setItem("idToken", id_token);
-            localStorage.setItem("loggedIn", "true");
-            localStorage.setItem("userName", "Usuário Teste"); // Nome de teste
-            localStorage.setItem("userEmail", "teste@example.com"); // E-mail de teste
-            window.location.href = "site"; // Redireciona para a página do site
+            // Enviar o ID token para o servidor para verificação e armazenamento
+            const responseFromServer = await fetch('/api/login', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ idToken: id_token })
+            });
+
+            const data = await responseFromServer.json();
+
+            if (data.success) {
+                localStorage.setItem("loggedIn", "true");
+                localStorage.setItem("userAP", data.ap); // Armazena a quantidade de AP apenas
+                window.location.href = "site"; // Redireciona para a página do site
+            } else {
+                alert("Falha no login: " + data.message);
+            }
         };
     </script>
 
@@ -224,12 +236,12 @@
         // Adiciona eventos de clique aos links e botões de fechar
         document.getElementById("termsLink").onclick = function() {
             openModal("termsModal");
-            loadTextFile("textos/termos.txt", "termsContent"); // Carrega o arquivo termos.txt
+            loadTextFile("textos/termos.txt", "termsContent");
         };
 
         document.getElementById("privacyLink").onclick = function() {
             openModal("privacyModal");
-            loadTextFile("textos/politica.txt", "privacyContent"); // Carrega o arquivo politica.txt
+            loadTextFile("textos/politica.txt", "privacyContent");
         };
 
         document.getElementById("closeTerms").onclick = function() {
