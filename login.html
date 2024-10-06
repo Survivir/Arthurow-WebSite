@@ -8,7 +8,7 @@
         // Verifica se o usuário já está logado
         window.onload = function () {
             if (localStorage.getItem("loggedIn")) {
-                window.location.href = "site.html"; // Redireciona para o site se já estiver logado
+                window.location.href = "site"; // Redireciona para o site se já estiver logado
             }
 
             google.accounts.id.initialize({
@@ -20,14 +20,13 @@
         // Callback para manipular a resposta de credencial
         window.handleCredentialResponse = function(response) {
             const id_token = response.credential; // Obtém o token ID
-            console.log("ID Token:", id_token); // Debug: Exibir token no console
 
             // Simulação do armazenamento local
             localStorage.setItem("idToken", id_token);
             localStorage.setItem("loggedIn", "true");
             localStorage.setItem("userName", "Usuário Teste"); // Nome de teste
             localStorage.setItem("userEmail", "teste@example.com"); // E-mail de teste
-            window.location.href = "site.html"; // Redireciona para a página do site
+            window.location.href = "site"; // Redireciona para a página do site
         };
     </script>
 

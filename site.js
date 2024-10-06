@@ -5,7 +5,7 @@ function isLoggedIn() {
 
 if (!isLoggedIn()) {
     alert("Você precisa estar logado para acessar esta página.");
-    window.location.href = "login.html";
+    window.location.href = "login";
 }
 
 // Obtendo o token ID do localStorage
@@ -37,7 +37,7 @@ document.getElementById("accountBtn").onclick = function() {
 document.getElementById("logoutBtn").onclick = function() {
     localStorage.removeItem("loggedIn");
     localStorage.removeItem("idToken");
-    window.location.href = "login.html"; // Redireciona para a página de login
+    window.location.href = "login"; // Redireciona para a página de login
 };
 
 // Função para analisar o JWT
